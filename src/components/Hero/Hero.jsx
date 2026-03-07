@@ -68,7 +68,6 @@ function Hero() {
     <section className="hero" id="hero">
       <canvas ref={canvasRef} className="hero-canvas" />
       <div className="hero-glow" />
-
       <div className="hero-content">
         <p className="hero-greeting">
           <span className="hero-dot" /> Disponible para desarrollo freelance
