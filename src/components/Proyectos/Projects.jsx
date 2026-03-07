@@ -15,8 +15,9 @@ const projects = [
         live: 'https://drive.google.com/uc?export=download&id=1SRVzMMoiQEnMybg-hDQe2p1L9nbKLMcl',
         repo: 'https://github.com/laor25/TareasAcademicas.git',
         featured: true,
+        liveLabel: 'Descargar APK',
+        liveIcon: 'download',
     },
-
     {
         id: 2,
         title: 'REST API con Django',
@@ -30,6 +31,8 @@ const projects = [
         live: '#',
         repo: '#',
         featured: false,
+        liveLabel: 'Demo',
+        liveIcon: 'demo',
     },
     {
         id: 3,
@@ -44,6 +47,8 @@ const projects = [
         live: '#',
         repo: '#',
         featured: false,
+        liveLabel: 'Demo',
+        liveIcon: 'demo',
     },
 ]
 
@@ -98,12 +103,20 @@ function Projects() {
 
                             <div className="project-actions">
                                 <a href={p.live} className="action-btn">
-                                    <svg width="16" height="16" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
-                                        <path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4" />
-                                        <polyline points="7 10 12 15 17 10" />
-                                        <line x1="12" y1="15" x2="12" y2="3" />
-                                    </svg>
-                                    Descargar APK
+                                    {p.liveIcon === 'download' ? (
+                                        <svg width="16" height="16" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
+                                            <path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4" />
+                                            <polyline points="7 10 12 15 17 10" />
+                                            <line x1="12" y1="15" x2="12" y2="3" />
+                                        </svg>
+                                    ) : (
+                                        <svg width="16" height="16" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
+                                            <path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6" />
+                                            <polyline points="15 3 21 3 21 9" />
+                                            <line x1="10" y1="14" x2="21" y2="3" />
+                                        </svg>
+                                    )}
+                                    {p.liveLabel}
                                 </a>
                                 <a href={p.repo} className="action-btn">
                                     <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24">
@@ -117,7 +130,7 @@ function Projects() {
                 </div>
 
                 <div className="projects-footer">
-                    <a href="https://github.com" target="_blank" rel="noreferrer" className="more-link">
+                    <a href="https://github.com/laor25" target="_blank" rel="noreferrer" className="more-link">
                         Ver más en GitHub →
                     </a>
                 </div>
