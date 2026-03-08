@@ -1,6 +1,16 @@
 import { useEffect, useRef } from 'react'
 import './Hero.css'
 
+const stack = [
+  { name: 'C#', icon: '🔷' },
+  { name: '.NET', icon: '🟣' },
+  { name: 'React', icon: '⚛️' },
+  { name: 'Angular', icon: '🔺' },
+  { name: 'Python', icon: '🐍' },
+  { name: 'MAUI', icon: '📱' },
+  { name: 'Javascript', icon: '🟨' },
+]
+
 function Hero() {
   const canvasRef = useRef(null)
 
@@ -67,15 +77,25 @@ function Hero() {
   return (
     <section className="hero" id="hero">
       <canvas ref={canvasRef} className="hero-canvas" />
-      <div className="hero-glow" />
-      <div className="hero-content">
+
+      {/* Fondo geométrico */}
+      <div className="hero-geo hero-geo-1" />
+      <div className="hero-geo hero-geo-2" />
+      <div className="hero-geo hero-geo-3" />
+      <div className="hero-geo hero-geo-4" />
+
+      <div className="hero-content"><br /><br /><br />
         <p className="hero-greeting">
           <span className="hero-dot" /> Disponible para desarrollo freelance
         </p>
+
         <h1 className="hero-name">
-          Luis<br/>
-          <span className="hero-name-accent">Olvera</span>
+          <span className="hero-name-line">Luis</span>
+          <span className="hero-name-line hero-name-accent">Olvera</span>
         </h1>
+
+        <div className="hero-divider" />
+
         <p className="hero-title">
           <span className="hero-mono">{'< '}</span>
           Full Stack Developer en formación
@@ -90,17 +110,14 @@ function Hero() {
           <a href="#contact" className="btn-outline">Contáctame</a>
         </div>
         <div className="hero-stack">
-          {['C#', '.NET', 'React', 'Angular', 'Python', 'MAUI','Javascript'].map(t => (
-            <span key={t} className="hero-tag">{t}</span>
+          {stack.map((t, i) => (
+            <span key={t.name} className="hero-tag" style={{ animationDelay: `${i * 0.1}s` }}>
+              <span className="hero-tag-icon" style={{ animationDelay: `${i * 0.3}s` }}>{t.icon}</span>
+              {t.name}
+            </span>
           ))}
         </div>
       </div>
-
-
-      {/*<div className="hero-scroll">
-        <span>scroll</span>
-        <div className="hero-scroll-line" />
-      </div>*/}
     </section>
   )
 }

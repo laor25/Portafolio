@@ -44,12 +44,12 @@ const skillGroups = [
 ]
 
 const soft = [
-  'Trabajo en equipo',
-  'Comunicación efectiva',
-  'Proactividad',
-  'Aprendizaje constante',
-  'Adaptabilidad',
-  'Resolución de problemas',
+  { label: 'Trabajo en equipo', emoji: '🤝' },
+  { label: 'Comunicación efectiva', emoji: '💬' },
+  { label: 'Proactividad', emoji: '✅' },
+  { label: 'Aprendizaje constante', emoji: '📚' },
+  { label: 'Adaptabilidad', emoji: '🔄' },
+  { label: 'Resolución de problemas', emoji: '🧩' },
 ]
 
 function Skills() {
@@ -93,12 +93,16 @@ function Skills() {
         </div>
 
         <div className="soft-section">
-          <h3 className="soft-title">Habilidades blandas</h3>
+          <h3 className="soft-title">
+            <span className="soft-title-line" />
+            Soft Skills
+            <span className="soft-title-line" />
+          </h3>
           <div className="soft-grid">
-            {soft.map(s => (
-              <div key={s} className="soft-chip">
-                <span className="soft-dot" />
-                {s}
+            {soft.map((s, i) => (
+              <div key={s.label} className="soft-chip" style={{ animationDelay: `${i * 0.08}s` }}>
+                <span className="soft-emoji">{s.emoji}</span>
+                {s.label}
               </div>
             ))}
           </div>

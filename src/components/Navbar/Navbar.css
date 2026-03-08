@@ -13,10 +13,11 @@
 }
 
 .navbar.scrolled {
-  background: rgba(7, 7, 13, 0.92);
+  background: rgba(248, 249, 252, 0.92);
   backdrop-filter: blur(20px);
   padding: 1rem 4rem;
   border-bottom: 1px solid var(--border);
+  box-shadow: 0 2px 20px rgba(0,0,0,0.06);
 }
 
 .navbar-logo {
@@ -27,9 +28,7 @@
   cursor: pointer;
 }
 
-.logo-accent {
-  color: var(--accent-light);
-}
+.logo-accent { color: var(--accent); }
 
 .navbar-links {
   display: flex;
@@ -54,17 +53,12 @@
   left: 0;
   width: 0;
   height: 1.5px;
-  background: var(--accent-light);
+  background: var(--accent);
   transition: width 0.2s;
 }
 
-.navbar-links a:hover {
-  color: var(--text);
-}
-
-.navbar-links a:hover::after {
-  width: 100%;
-}
+.navbar-links a:hover { color: var(--text); }
+.navbar-links a:hover::after { width: 100%; }
 
 .cv-btn {
   background: var(--accent) !important;
@@ -75,10 +69,58 @@
 }
 
 .cv-btn:hover {
-  background: var(--accent-light) !important;
+  opacity: 0.9 !important;
   transform: translateY(-1px) !important;
 }
 
-.cv-btn::after {
-  display: none !important;
+.cv-btn::after { display: none !important; }
+
+.burger {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 4px;
+  z-index: 200;
+}
+
+.burger span {
+  display: block;
+  width: 24px;
+  height: 2px;
+  background: var(--text);
+  border-radius: 2px;
+  transition: all 0.3s ease;
+}
+
+.x1 { transform: translateY(7px) rotate(45deg) !important; }
+.x2 { opacity: 0 !important; }
+.x3 { transform: translateY(-7px) rotate(-45deg) !important; }
+
+@media (max-width: 768px) {
+  .navbar { padding: 1rem 1.5rem; }
+  .navbar.scrolled { padding: 0.8rem 1.5rem; }
+  .burger { display: flex; }
+  .navbar-links {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: 70%;
+    max-width: 280px;
+    height: 100vh;
+    background: var(--surface);
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 3rem 2.5rem;
+    gap: 2rem;
+    border-left: 1px solid var(--border);
+    box-shadow: -10px 0 40px rgba(0,0,0,0.08);
+    transition: right 0.35s ease;
+    z-index: 150;
+  }
+  .navbar-links.open { right: 0; }
+  .navbar-links a { font-size: 1.1rem; color: var(--text); }
 }
