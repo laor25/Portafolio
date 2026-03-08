@@ -111,9 +111,9 @@ function About() {
               </div>
             </div>
 
-            {/* Botón CV */}
+            {/* botón CV */}
             <div className="about-card-footer">
-              <a href="/cv-luis.pdf" download className="about-cv-btn">
+              <a href="/Dev_CV.pdf" download className="about-cv-btn">
                 <svg width="16" height="16" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
                   <path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/>
                   <polyline points="7 10 12 15 17 10"/>

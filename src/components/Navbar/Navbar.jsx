@@ -21,7 +21,7 @@ function Navbar() {
         <li><a href="#skills">Habilidades Técnicas</a></li>
         <li><a href="#projects">Proyectos</a></li>
         <li><a href="#contact">Contacto</a></li>
-        <li><a href="/cv-luis.pdf" className="cv-btn" download>Descargar CV</a></li>
+        <li><a href="/Dev_CV.pdf" className="cv-btn" download>Descargar CV</a></li>
       </ul>
     </nav>
   )
