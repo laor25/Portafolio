@@ -12,7 +12,7 @@ function Contact() {
                 <div className="contact-inner">
                     <div className="contact-left">
                         <h2 className="contact-heading">
-                            ¿Ncesitas un <span className="contact-accent">desarrollo?</span>
+                            ¿Necesitas un <span className="contact-accent">desarrollo?</span>
                         </h2>
                         <p className="contact-desc">
                             ¿Tienes una idea o proyecto en mente? Puedo ayudarte a construirlo.
