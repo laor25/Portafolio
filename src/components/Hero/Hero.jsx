@@ -78,7 +78,6 @@ function Hero() {
     <section className="hero" id="hero">
       <canvas ref={canvasRef} className="hero-canvas" />
 
-      {/* Fondo geométrico */}
       <div className="hero-geo hero-geo-1" />
       <div className="hero-geo hero-geo-2" />
       <div className="hero-geo hero-geo-3" />

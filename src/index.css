@@ -235,7 +235,6 @@ body {
 
 @media (max-width: 768px) {
   .hero {
-    align-items: flex-end;
     padding-bottom: 6rem;
   }
 }
